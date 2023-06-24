@@ -1,7 +1,7 @@
 import {SmileyIcon} from '@primer/octicons-react'
 
 export default {
-    logo: <span>devラジの資料置き場</span>,
+    logo: <span>devラジ on Tuesday </span>,
     project: {
         link: 'https://example.com',
         icon: <SmileyIcon size={24}/>,
