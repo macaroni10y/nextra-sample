@@ -1,17 +1,35 @@
 ## こういうカードを作る
 
+import {useSSG} from 'nextra/ssg'
 import {Card, Cards} from "nextra-theme-docs";
 
-<Cards>
-    <Card href="hoge" title="aaa">a</Card>
-    <Card href="fuga" title="bbb">b</Card>
-    <Card href="piyo" title="ccc">c</Card>
-</Cards>
+export const getStaticProps = () => {
+    return fetch('https://cat-fact.herokuapp.com/facts')
+        .then(res => res.json())
+        .then(catFacts => ({props: {ssg: catFacts.slice(0, 5)}, revalidate: 10}));
+}
+
+export const ReleasesRenderer = () =>
+    <Cards>
+        {useSSG().map(release => <Card title={release.text}/>)}
+    </Cards>
+
+<ReleasesRenderer/>
 
 ```mdx
-<Cards>
-    <Card href="hoge" title="aaa">a</Card>
-    <Card href="fuga" title="bbb">b</Card>
-    <Card href="piyo" title="ccc">c</Card>
-</Cards>
+import {useSSG} from 'nextra/ssg'
+import {Card, Cards} from "nextra-theme-docs";
+
+export const getStaticProps = () => {
+    return fetch('https://cat-fact.herokuapp.com/facts')
+        .then(res => res.json())
+        .then(catFacts => ({props: {ssg: catFacts.slice(0, 5)}, revalidate: 10}));
+}
+
+export const ReleasesRenderer = () =>
+    <Cards>
+        {useSSG().map(release => <Card title={release.text}/>)}
+    </Cards>
+
+<ReleasesRenderer/>
 ```

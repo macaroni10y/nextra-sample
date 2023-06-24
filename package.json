@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@primer/octicons-react": "^19.4.0",
+    "markdown-to-jsx": "^7.2.1",
     "next": "^13.4.7",
     "nextra": "^2.8.0",
     "nextra-theme-blog": "^2.8.0",
