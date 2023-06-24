@@ -1,0 +1,71 @@
+# こういうタブを作る
+
+import {Tab, Tabs} from "nextra-theme-docs";
+
+<Tabs items={['tab a', 'tab b', 'tab c']}>
+    <Tab>
+        ```mermaid
+        sequenceDiagram
+        participant A
+        participant B
+        A->>B: Hello Bob, how are you?
+        B->>A: Great!
+        ```
+    </Tab>
+    <Tab>
+        ```mermaid
+        sequenceDiagram
+        participant A
+        participant B
+        participant C
+        A->>B: Hello Bob, how are you?
+        B->>C: Hello Charlie, how do I answer Bob?
+        C->>B: Like this! 'Great!'
+        B->>A: Great!
+        ```
+    </Tab>
+    <Tab>
+        ```mermaid
+        sequenceDiagram
+        participant A
+        A->>A: Hello Andy, how are you?
+        A->>A: Great!
+        ```
+    </Tab>
+</Tabs>
+
+~~~mdx
+<Tabs items={['tab a', 'tab b', 'tab c']}>
+    <Tab>
+        ```mermaid
+        sequenceDiagram
+        participant A
+        participant B
+        A->>B: Hello Bob, how are you?
+        B->>A: Great!
+        ```
+    </Tab>
+    <Tab>
+        ```mermaid
+        sequenceDiagram
+        participant A
+        participant B
+        participant C
+        A->>B: Hello Bob, how are you?
+        B->>C: Hello Charlie, how do I answer Bob?
+        C->>B: Like this! 'Great!'
+        B->>A: Great!
+        ```
+    </Tab>
+    <Tab>
+        ```mermaid
+        sequenceDiagram
+        participant A
+        A->>A: Hello Andy, how are you?
+        A->>A: Great!
+        ```
+    </Tab>
+</Tabs>
+
+~~~
+
