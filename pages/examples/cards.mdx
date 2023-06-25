@@ -7,13 +7,13 @@ export const getStaticProps = () => {
         .then(catFacts => ({props: {ssg: catFacts.slice(0, 5)}, revalidate: 10}));
 }
 
-export const ReleasesRenderer = () =>
+export const CatFactCards = () =>
     <Cards>
         {useSSG().map(catFact => <Card title={catFact.text}/>)}
     </Cards>
 
 ## こういうカードを作る
-<ReleasesRenderer/>
+<CatFactCards/>
 
 ```mdx
 import {useSSG} from 'nextra/ssg'
@@ -25,11 +25,11 @@ export const getStaticProps = () => {
         .then(catFacts => ({props: {ssg: catFacts.slice(0, 5)}, revalidate: 10}));
 }
 
-export const ReleasesRenderer = () =>
+export const CatFactCards = () =>
     <Cards>
         {useSSG().map(catFact => <Card title={catFact.text}/>)}
     </Cards>
 
 ## こういうカードを作る
-<ReleasesRenderer/>
+<CatFactCards/>
 ```
