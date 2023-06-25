@@ -1,5 +1,3 @@
-## こういうカードを作る
-
 import {useSSG} from 'nextra/ssg'
 import {Card, Cards} from "nextra-theme-docs";
 
@@ -11,9 +9,10 @@ export const getStaticProps = () => {
 
 export const ReleasesRenderer = () =>
     <Cards>
-        {useSSG().map(release => <Card title={release.text}/>)}
+        {useSSG().map(catFact => <Card title={catFact.text}/>)}
     </Cards>
 
+## こういうカードを作る
 <ReleasesRenderer/>
 
 ```mdx
@@ -28,8 +27,9 @@ export const getStaticProps = () => {
 
 export const ReleasesRenderer = () =>
     <Cards>
-        {useSSG().map(release => <Card title={release.text}/>)}
+        {useSSG().map(catFact => <Card title={catFact.text}/>)}
     </Cards>
 
+## こういうカードを作る
 <ReleasesRenderer/>
 ```
